@@ -1,4 +1,4 @@
-package com.example.alex.stevesmusicexchange;
+package com.example.alex.stevesmusicexchange.Instruments;
 
 /**
  * Created by Alex on 29/10/2017.
