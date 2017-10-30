@@ -10,4 +10,5 @@ public interface Sellable {
     double getMarkup(double sellPrice);
     double getBoughtPrice();
     double getSalePrice();
+    double getProfit();
 }

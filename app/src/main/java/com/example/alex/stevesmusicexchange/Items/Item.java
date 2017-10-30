@@ -10,7 +10,7 @@ public abstract class Item implements Sellable{
 
     private String description;
     private double boughtPrice;
-    public double sellPrice;
+    private double sellPrice;
 
     public Item(String description, double boughtPrice){
         this.description = description;
@@ -36,6 +36,10 @@ public abstract class Item implements Sellable{
 
     public double getMarkup(double sellPrice){
         return (sellPrice/boughtPrice);
+    }
+
+    public double getProfit(){
+        return sellPrice - boughtPrice;
     }
 
 

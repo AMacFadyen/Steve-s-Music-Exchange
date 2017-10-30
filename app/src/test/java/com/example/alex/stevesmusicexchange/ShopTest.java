@@ -23,10 +23,10 @@ public class ShopTest {
 
     @Before
     public void before(){
-        shop = new Shop("Steve's Music Exchange", 400);
-        guitar = new Guitar("String", "Ibanez", "Green", 150, 6);
-        plectrum = new Plectrum("Plastic plec", 25);
-        piano = new Piano("String", "Casinovo", "Dark Green", 100, "10th OCT", 88);
+        shop = new Shop("Steve's Music Exchange", 500);
+        guitar = new Guitar("String", "Ibanez", "Green", 200, 6);
+        plectrum = new Plectrum("Plastic plec", 40);
+        piano = new Piano("String", "Casinovo", "Dark Green", 200, "10th OCT", 88);
     }
 
     @Test
@@ -38,15 +38,30 @@ public class ShopTest {
     @Test
     public void testCostRemoval(){
         shop.addItem(guitar);
-        assertEquals(250, shop.getShopFunds(), 0.1);
+        assertEquals(300, shop.getShopFunds(), 0.1);
     }
 
     @Test
     public void testStockRemoval(){
         shop.addItem(guitar);
-        guitar.applyMarkup(1.3);
-        assertEquals(250, shop.getShopFunds(), 0.1);
+        guitar.applyMarkup(1.5);
+        assertEquals(300, shop.getShopFunds(), 0.1);
         shop.sellItem(guitar);
-        assertEquals(445, shop.getShopFunds(),0.1);
+        assertEquals(600, shop.getShopFunds(),0.1);
+    }
+
+    @Test
+    public void testProfitSum(){
+        shop.addItem(guitar);
+        guitar.applyMarkup(1.5);
+        shop.addItem(plectrum);
+        plectrum.applyMarkup(1.5);
+        shop.addItem(piano);
+        piano.applyMarkup(1.5);
+        assertEquals(60, shop.getShopFunds(), 0.1);
+        shop.sellItem(guitar);
+        shop.sellItem(piano);
+        shop.sellItem(plectrum);
+        assertEquals(720, shop.getShopFunds(), 0.1);
     }
 }

@@ -12,8 +12,8 @@ public abstract class Instrument implements Sellable, Playable {
     private String type;
     private String brand;
     private String colour;
-    public double boughtPrice;
-    public double sellPrice;
+    private double boughtPrice;
+    private double sellPrice;
 
     public Instrument(String type, String brand, String colour, double boughtPrice){
         this.type = type;
@@ -50,5 +50,9 @@ public abstract class Instrument implements Sellable, Playable {
 
     public double getMarkup(double sellPrice){
         return (sellPrice/boughtPrice);
+    }
+
+    public double getProfit(){
+        return sellPrice - boughtPrice;
     }
 }
