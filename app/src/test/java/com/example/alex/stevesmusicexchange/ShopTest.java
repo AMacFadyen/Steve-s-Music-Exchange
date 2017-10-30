@@ -63,5 +63,6 @@ public class ShopTest {
         shop.sellItem(piano);
         shop.sellItem(plectrum);
         assertEquals(720, shop.getShopFunds(), 0.1);
+        assertEquals(220, shop.currentProfit, 0.1);
     }
 }

@@ -15,12 +15,14 @@ public class Shop {
     public double shopFunds;
     private ArrayList<Sellable> stock;
     public double currentProfit;
+    public double projectedProfit;
 
     public Shop(String name, double shopFunds){
         this.name = name;
         this.shopFunds = shopFunds;
         this.stock = new ArrayList<Sellable>();
         this.currentProfit = 0;
+        this.projectedProfit = 0;
     }
 
     public String getName() {
@@ -45,12 +47,14 @@ public class Shop {
     public void sellItem(Sellable sellable){
         stock.remove(sellable);
         shopFunds += sellable.getSalePrice();
+        currentProfit += sellable.getProfit();
+
     }
 
-    public double checkProfit(){
+    public double checkProfitProjection(){
         for(Sellable sellable : stock){
-            currentProfit += sellable.getProfit();
+            projectedProfit += sellable.getProfit();
         }
-        return currentProfit;
+        return projectedProfit;
     }
 }
