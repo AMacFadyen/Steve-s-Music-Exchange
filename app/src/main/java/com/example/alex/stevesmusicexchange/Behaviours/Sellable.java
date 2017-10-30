@@ -8,4 +8,5 @@ public interface Sellable {
 
     void applyMarkup(double Markup);
     double getMarkup(double sellPrice);
+    double getBoughtPrice();
 }

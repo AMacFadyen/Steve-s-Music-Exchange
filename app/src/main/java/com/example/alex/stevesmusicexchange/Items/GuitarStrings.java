@@ -13,5 +13,7 @@ public class GuitarStrings extends Item{
         this.numberOfStrings = numberOfStrings;
     }
 
-
+    public double getNumberOfStrings() {
+        return numberOfStrings;
+    }
 }
