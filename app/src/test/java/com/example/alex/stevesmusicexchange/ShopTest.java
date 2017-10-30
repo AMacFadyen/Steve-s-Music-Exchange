@@ -42,6 +42,11 @@ public class ShopTest {
     }
 
     @Test
-    void
-
+    public void testStockRemoval(){
+        shop.addItem(guitar);
+        guitar.applyMarkup(1.3);
+        assertEquals(250, shop.getShopFunds(), 0.1);
+        shop.sellItem(guitar);
+        assertEquals(445, shop.getShopFunds(),0.1);
+    }
 }

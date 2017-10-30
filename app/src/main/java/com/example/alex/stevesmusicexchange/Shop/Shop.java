@@ -19,7 +19,6 @@ public class Shop {
         this.name = name;
         this.shopFunds = shopFunds;
         this.stock = new ArrayList<Sellable>();
-        deleteStock = new ArrayList<>();
     }
 
     public String getName() {
@@ -42,9 +41,7 @@ public class Shop {
     }
 
     public void sellItem(Sellable sellable){
-
-        for(sellable: stock) {
-            if(sel == )
-        }
+        stock.remove(sellable);
+        shopFunds += sellable.getSalePrice();
     }
 }

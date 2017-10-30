@@ -26,7 +26,7 @@ public abstract class Item implements Sellable{
         return boughtPrice;
     }
 
-    public double getSellPrice() {
+    public double getSalePrice() {
         return sellPrice;
     }
 
@@ -37,4 +37,6 @@ public abstract class Item implements Sellable{
     public double getMarkup(double sellPrice){
         return (sellPrice/boughtPrice);
     }
+
+
 }
